@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerLocomotion : MonoBehaviour
 {
@@ -25,7 +26,14 @@ public class PlayerLocomotion : MonoBehaviour
         direction = direction + _camera.right * PlayerManager.instance.inputManager.horInput;
         direction.Normalize();
         direction.y = 0;
-        direction *= PlayerManager.instance.mvmtSpeed;
+
+        if (PlayerManager.instance.isSprinting) 
+        {
+            direction *= PlayerManager.instance.sprintSpeed;
+        }
+        else
+            direction *= PlayerManager.instance.mvmtSpeed;
+
         moveVelocity = direction;
         PlayerManager.instance._rigidbody.velocity = moveVelocity;
     } 

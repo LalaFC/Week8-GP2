@@ -18,8 +18,12 @@ public class PlayerManager : MonoBehaviour
     [Header("State")]
     public float mvmtSpeed;
     public float rotSpeed;
+    public float sprintSpeed;
 
+    [Header("State")]
     public bool isSprinting;
+    public bool isWalking;
+    public bool isJumping;
 
     private void Awake()
     {
