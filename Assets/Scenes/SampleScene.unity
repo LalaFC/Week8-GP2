@@ -615,9 +615,9 @@ GameObject:
   - component: {fileID: 1309778396}
   - component: {fileID: 1309778395}
   - component: {fileID: 1309778394}
-  - component: {fileID: 1309778399}
   - component: {fileID: 1309778397}
   - component: {fileID: 1309778398}
+  - component: {fileID: 1309778399}
   m_Layer: 0
   m_Name: Player(Parent)
   m_TagString: Untagged
@@ -652,6 +652,7 @@ MonoBehaviour:
   mvmt: {x: 0, y: 0}
   verInput: 0
   horInput: 0
+  moveAmount: 0
 --- !u!4 &1309778396
 Transform:
   m_ObjectHideFlags: 0
@@ -725,11 +726,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1309778393}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1cbcb4568370484688b02beeb18ca63, type: 3}
+  m_Script: {fileID: 11500000, guid: eab98856e5e18df44aa72b2d0540f440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerAnim: {fileID: 0}
-  speed: 0
 --- !u!1 &1638222230
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,9 +759,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1309778393}
+  _rigidbody: {fileID: 1309778397}
+  PlayerAnimator: {fileID: 0}
   inputManager: {fileID: 0}
   locomotion: {fileID: 0}
-  _rigidbody: {fileID: 1309778397}
+  playerAnim: {fileID: 0}
   mvmtSpeed: 5
   rotSpeed: 1
 --- !u!4 &1638222232

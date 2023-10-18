@@ -8,6 +8,7 @@ public class InputManager : MonoBehaviour
     public Vector2 mvmt;
     public float verInput, horInput;
     public float moveAmount;
+    public bool sprint_input;
 
     // Start is called before the first frame update
     private void OnEnable()
@@ -16,6 +17,8 @@ public class InputManager : MonoBehaviour
         {
             playerCtrls = new PlayerCtrl();
             playerCtrls.PlayerMvmt.movement.performed += i => mvmt = i.ReadValue<Vector2>();
+            playerCtrls.PlayerAction.Sprint.performed += i  => sprint_input = true;
+            playerCtrls.PlayerAction.Sprint.canceled += i => sprint_input = false;
         }
         playerCtrls.Enable();
     }
