@@ -34,6 +34,7 @@ public class InputManager : MonoBehaviour
     public void HandleAllInput()
     {
         HandleMovementInput();
+        HandleSprinting();
     }
     private void HandleMovementInput()
     {
@@ -42,5 +43,15 @@ public class InputManager : MonoBehaviour
 
         moveAmount = Mathf.Clamp01(Mathf.Abs(horInput+verInput));
         PlayerManager.instance.playerAnim.UpdateAnimatorValues(0, moveAmount);
+    }
+
+    private void HandleSprinting()
+    {
+        if (sprint_input && moveAmount > 0.5) 
+        {
+            PlayerManager.instance.isSprinting = true;
+        }
+        else
+            PlayerManager.instance.isSprinting = false;
     }
 }

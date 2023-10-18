@@ -19,6 +19,8 @@ public class PlayerManager : MonoBehaviour
     public float mvmtSpeed;
     public float rotSpeed;
 
+    public bool isSprinting;
+
     private void Awake()
     {
         if (instance != null && instance != this) { Destroy(this); }
