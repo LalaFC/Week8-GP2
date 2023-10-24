@@ -19,6 +19,7 @@ public class PlayerManager : MonoBehaviour
     public float mvmtSpeed;
     public float rotSpeed;
     public float sprintSpeed;
+    public float walkSpeed;
 
     [Header("State")]
     public bool isSprinting;

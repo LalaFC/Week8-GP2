@@ -22,6 +22,10 @@ public class PlayerAnimation : MonoBehaviour
         {
             horMove = 2;
         }
+        else if (PlayerManager.instance.isWalking)
+        {
+            verMove = 0.5f;
+        }
         PlayerManager.instance.PlayerAnimator.SetFloat(horizontal, horMove, 0.1f, Time.deltaTime);
         PlayerManager.instance.PlayerAnimator.SetFloat(vertical, verMove, 0.1f, Time.deltaTime);
     }

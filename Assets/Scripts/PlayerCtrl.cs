@@ -208,7 +208,7 @@ public partial class @PlayerCtrl: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b02aaa3c-830f-4f31-8e51-5cc2917faeeb"",
-                    ""path"": ""<Keyboard>/ctrl"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

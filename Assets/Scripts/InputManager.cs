@@ -9,6 +9,7 @@ public class InputManager : MonoBehaviour
     public float verInput, horInput;
     public float moveAmount;
     public bool sprint_input;
+    public bool walk_input;
 
     // Start is called before the first frame update
     private void OnEnable()
@@ -19,6 +20,8 @@ public class InputManager : MonoBehaviour
             playerCtrls.PlayerMvmt.movement.performed += i => mvmt = i.ReadValue<Vector2>();
             playerCtrls.PlayerAction.Sprint.performed += i  => sprint_input = true;
             playerCtrls.PlayerAction.Sprint.canceled += i => sprint_input = false;
+            playerCtrls.PlayerAction.Walk.performed += i => walk_input = true;
+            playerCtrls.PlayerAction.Walk.canceled += i => walk_input = false;
         }
         playerCtrls.Enable();
     }
@@ -35,6 +38,7 @@ public class InputManager : MonoBehaviour
     {
         HandleMovementInput();
         HandleSprinting();
+        HandleWalking();
     }
     private void HandleMovementInput()
     {
@@ -53,5 +57,14 @@ public class InputManager : MonoBehaviour
         }
         else
             PlayerManager.instance.isSprinting = false;
+    }
+    private void HandleWalking()
+    {
+        if (walk_input && moveAmount > 0.5)
+        {
+            PlayerManager.instance.isWalking = true;
+        }
+        else
+            PlayerManager.instance.isWalking = false;
     }
 }
